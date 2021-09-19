@@ -20,7 +20,7 @@ export class ToDoItem extends Component {
                 <p>
                     {/* In order to set set state of parent component, we have to climb */}
                     {/* the component hierarchy by using state seting function passed as prop */}
-                    <input  onChange={() => this.props.markComplete( id) } 
+                    <input  onChange={ this.props.markComplete.bind(this, id) } 
                             type="checkbox"/> {' '} { title }
                 </p>
             </div>

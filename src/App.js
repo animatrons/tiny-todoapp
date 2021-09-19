@@ -29,7 +29,7 @@ class App extends Component {
   // Using arrow function, the 'this' will always be the context in which the 
   // function was first declared, using bind() later won't change the context, 
   // but can change the argument (in ToDoItem.js)
-  markComplete(id){
+  markComplete = (id) => {
     this.setState({ todos: this.state.todos.map( todo => {
       if (todo.id === id) {
         todo.completed = !todo.completed;
@@ -45,7 +45,7 @@ class App extends Component {
   render() {
     return (
       <div className="App container">
-        <ToDos markComplete={this.markComplete.bind(this)} todos={this.state.todos} />
+        <ToDos markComplete={this.markComplete} todos={this.state.todos} />
       </div>
     );
   }
