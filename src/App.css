@@ -23,6 +23,19 @@ a {
   padding: 0 15px;
   margin: 0 auto;
 }
+
+.remove-task {
+  background: #f4f4f4;
+  color: red;
+  border: none;
+  float: right;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.remove-task:hover {
+  color: #eec8c8;
+}
 @media (max-width: 992px) {
   .container {
     width: 90%;

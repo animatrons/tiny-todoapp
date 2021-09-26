@@ -6,7 +6,10 @@ import ToDoItem from "./ToDoItem";
 class ToDos extends Component {
   render() {
     return this.props.todos.map((todo) => (
-       <ToDoItem markComplete={this.props.markComplete} key={todo.id} todoP={todo}/>
+       <ToDoItem  markComplete={this.props.markComplete} 
+                  key={todo.id} 
+                  todoP={todo}
+                  delTodo={this.props.delTodo}/>
     ));
   }
 }

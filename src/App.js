@@ -34,7 +34,7 @@ class App extends Component {
       if (todo.id === id) {
         todo.completed = !todo.completed;
       };
-
+      
 
       return todo;
     }) });
@@ -42,10 +42,17 @@ class App extends Component {
     console.log(this.thisVar + " " + id);
   }
 
+  // Delete todo
+  delTodo = (id) => {
+    this.setState({ todos: [...this.state.todos.filter(todo => todo.id !== id)] });
+  }
+
   render() {
     return (
       <div className="App container">
-        <ToDos markComplete={this.markComplete} todos={this.state.todos} />
+        <ToDos  markComplete={this.markComplete}  
+                todos={this.state.todos}
+                delTodo={this.delTodo} />
       </div>
     );
   }

@@ -21,7 +21,11 @@ export class ToDoItem extends Component {
                     {/* In order to set set state of parent component, we have to climb */}
                     {/* the component hierarchy by using state seting function passed as prop */}
                     <input  onChange={ this.props.markComplete.bind(this, id) } 
-                            type="checkbox"/> {' '} { title }
+                            type="checkbox"/> {' '} 
+                    { title }
+                    <button onClick={this.props.delTodo.bind(this, id)} style={btnStyle} className="remove-task"> 
+                        x
+                    </button>
                 </p>
             </div>
         )
@@ -31,6 +35,10 @@ export class ToDoItem extends Component {
 // PropTypes
 ToDoItem.propTypes = {
     todoP: PropTypes.object.isRequired
+}
+
+const btnStyle = {
+    
 }
 
 export default ToDoItem;
