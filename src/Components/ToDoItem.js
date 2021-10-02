@@ -7,16 +7,28 @@ export class ToDoItem extends Component {
             background: '#f4f4f4',
             padding: '10px',
             borderBottom: '1px #ccc dotted',
-            textDecoration: this.props.todoP.completed ? 'line-through' : 'none'
+            textDecoration: this.props.todoP.completed ? 'line-through' : 'none',
+            display: this.props.todoP ? 'block' : 'none'
         }
     }
 
-    thisVar = 'this is from ToDoItem'
+    thisVar = 'this is from ToDoItem';
+
+    componentDidMount() {
+        console.log(`${this.props.todoP.title} mounted `);
+    };
+    componentWillUnmount() {
+        console.log(`${this.props.todoP.title} unmounted `);
+    };
 
     render () {
         const { id, title } = this.props.todoP;
+        
+        
+
         return (
             <div style={this.getStyle()}>
+                {this.props.todoP ? 
                 <p>
                     {/* In order to set set state of parent component, we have to climb */}
                     {/* the component hierarchy by using state seting function passed as prop */}
@@ -27,6 +39,7 @@ export class ToDoItem extends Component {
                         x
                     </button>
                 </p>
+                : null }
             </div>
         )
     }

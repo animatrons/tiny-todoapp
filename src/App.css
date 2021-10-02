@@ -24,6 +24,32 @@ a {
   margin: 0 auto;
 }
 
+.btn {
+  display: inline-block;
+  border: none;
+  background: #555;
+  padding: 7px 20px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #666;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: right
+}
+
+.navbar-link {
+  font-size: 12px;
+  color: blue;
+  text-decoration: underline;
+  margin-left: 10px;
+}
+
 .remove-task {
   background: #f4f4f4;
   color: red;
